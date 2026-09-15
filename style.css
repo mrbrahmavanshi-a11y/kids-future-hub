@@ -67,7 +67,7 @@ body {
 /* Hero Section */
 .hero {
   text-align: center;
-  padding: 3rem 1rem 1.5rem;
+  padding: 2.5rem 1rem 1rem;
   max-width: 800px;
   margin: 0 auto;
 }
@@ -137,7 +137,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Task List Grid */
+/* Task List Styles */
 .task-grid {
   display: flex;
   flex-direction: column;
@@ -153,7 +153,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: all 0.2s ease;
 }
 
 .task-card.completed {
@@ -192,7 +191,6 @@ body {
   color: #fff;
 }
 
-/* Add Task Input */
 .add-task-card {
   display: flex;
   gap: 10px;
@@ -218,10 +216,67 @@ body {
   cursor: pointer;
 }
 
-.placeholder-card {
+/* AI Logic & Story Cards */
+.logic-card, .story-card {
   background: var(--card-bg);
-  padding: 3rem;
+  border: 1px solid #334155;
   border-radius: 16px;
-  text-align: center;
-  border: 1px dashed #334155;
+  padding: 1.8rem;
+  margin-top: 1rem;
+}
+
+.badge {
+  background: var(--accent-purple);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.challenge-desc, .story-text {
+  color: var(--text-muted);
+  margin: 0.8rem 0 1.5rem;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.options-grid, .story-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-btn, .choice-btn {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: var(--text-main);
+  padding: 14px;
+  border-radius: 10px;
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.option-btn:hover, .choice-btn:hover {
+  border-color: var(--accent-purple);
+  background: #1e293b;
+}
+
+.option-btn.correct {
+  background: rgba(16, 185, 129, 0.2) !important;
+  border-color: var(--success-green) !important;
+}
+
+.option-btn.wrong {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: #ef4444 !important;
+}
+
+.feedback-box {
+  margin-top: 1rem;
+  font-weight: 700;
 }
