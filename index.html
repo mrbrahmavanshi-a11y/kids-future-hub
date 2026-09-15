@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kids Future Skills Hub | Habit Tracker & AI Playground</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="navbar">
+    <div class="logo">🚀 FutureKids<span>Hub</span></div>
+    <div class="user-stats">
+      <div class="stat-badge">🔥 Streak: <span id="streakCount">0</span> Days</div>
+      <div class="stat-badge star">⭐ Points: <span id="pointCount">0</span></div>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <h1>Replace Screen Addiction With <span>Future-Ready Skills</span></h1>
+    <p>Gamified habit tracking, AI logic puzzles, and interactive story-building for smart kids.</p>
+  </section>
+
+  <!-- Module Tabs Navigation -->
+  <div class="module-nav">
+    <button class="nav-btn active" onclick="switchTab('habits')">📋 Habit & Screen Tracker</button>
+    <button class="nav-btn" onclick="switchTab('ai-logic')">🧠 AI Logic Playground</button>
+    <button class="nav-btn" onclick="switchTab('stories')">📖 Interactive Storybook</button>
+  </div>
+
+  <!-- MODULE 1: HABIT TRACKER CONTAINER -->
+  <main class="container" id="habits-module">
+    <div class="module-header">
+      <h2>Today's Smart Missions</h2>
+      <p>Complete your daily tasks to earn star points and maintain your streak!</p>
+    </div>
+
+    <!-- Task List Container -->
+    <div class="task-grid" id="taskList">
+      <!-- Tasks JS se dynamically render honge -->
+    </div>
+
+    <!-- Add Custom Mission Input -->
+    <div class="add-task-card">
+      <input type="text" id="customTaskInput" placeholder="Add custom daily mission (e.g. Read 15 mins)...">
+      <button onclick="addCustomTask()">+ Add Mission</button>
+    </div>
+  </main>
+
+  <!-- MODULE 2: AI LOGIC PLAYGROUND (Placeholder for Phase 2) -->
+  <main class="container hidden" id="ai-logic-module">
+    <div class="placeholder-card">
+      <h2>🧠 AI Prompting & Logic Playground</h2>
+      <p>Interactive puzzles and AI prompt building challenges loading soon in Phase 2!</p>
+    </div>
+  </main>
+
+  <!-- MODULE 3: INTERACTIVE STORIES (Placeholder for Phase 3) -->
+  <main class="container hidden" id="stories-module">
+    <div class="placeholder-card">
+      <h2>📖 Choose-Your-Adventure Stories</h2>
+      <p>Decision-based interactive storybooks loading soon in Phase 3!</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
