@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kids Future Skills Hub | Habit Tracker & AI Playground</title>
+  <title>Kids Future Skills Hub | Habits, AI & Stories</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -20,49 +20,70 @@
 
   <!-- Hero Banner -->
   <section class="hero">
-    <h1>Replace Screen Addiction With <span>Future-Ready Skills</span></h1>
-    <p>Gamified habit tracking, AI logic puzzles, and interactive story-building for smart kids.</p>
+    <h1>Replace Screen Time With <span>Future Skills</span></h1>
+    <p>Gamified habits, AI logic puzzles, and interactive decision stories for smart kids.</p>
   </section>
 
-  <!-- Module Tabs Navigation -->
+  <!-- Module Navigation Tabs -->
   <div class="module-nav">
-    <button class="nav-btn active" onclick="switchTab('habits')">📋 Habit & Screen Tracker</button>
-    <button class="nav-btn" onclick="switchTab('ai-logic')">🧠 AI Logic Playground</button>
-    <button class="nav-btn" onclick="switchTab('stories')">📖 Interactive Storybook</button>
+    <button class="nav-btn active" onclick="switchTab(event, 'habits')">📋 Habit Tracker</button>
+    <button class="nav-btn" onclick="switchTab(event, 'ai-logic')">🧠 AI Playground</button>
+    <button class="nav-btn" onclick="switchTab(event, 'stories')">📖 Interactive Story</button>
   </div>
 
-  <!-- MODULE 1: HABIT TRACKER CONTAINER -->
+  <!-- MODULE 1: HABIT TRACKER -->
   <main class="container" id="habits-module">
     <div class="module-header">
       <h2>Today's Smart Missions</h2>
-      <p>Complete your daily tasks to earn star points and maintain your streak!</p>
+      <p>Complete daily tasks to earn star points and maintain your streak!</p>
     </div>
 
-    <!-- Task List Container -->
-    <div class="task-grid" id="taskList">
-      <!-- Tasks JS se dynamically render honge -->
-    </div>
+    <div class="task-grid" id="taskList"></div>
 
-    <!-- Add Custom Mission Input -->
     <div class="add-task-card">
-      <input type="text" id="customTaskInput" placeholder="Add custom daily mission (e.g. Read 15 mins)...">
+      <input type="text" id="customTaskInput" placeholder="Add custom mission (e.g., Read 15 mins)...">
       <button onclick="addCustomTask()">+ Add Mission</button>
     </div>
   </main>
 
-  <!-- MODULE 2: AI LOGIC PLAYGROUND (Placeholder for Phase 2) -->
+  <!-- MODULE 2: AI LOGIC PLAYGROUND -->
   <main class="container hidden" id="ai-logic-module">
-    <div class="placeholder-card">
+    <div class="module-header">
       <h2>🧠 AI Prompting & Logic Playground</h2>
-      <p>Interactive puzzles and AI prompt building challenges loading soon in Phase 2!</p>
+      <p>Learn how to talk to AI by fixing prompts and solving logic puzzles!</p>
+    </div>
+
+    <div class="logic-card">
+      <div class="badge">Challenge #1</div>
+      <h3>Fix The AI Prompt 🤖</h3>
+      <p class="challenge-desc">The AI generated a blurry image because the prompt was too basic: <i>"Draw a dog."</i> Which detailed prompt produces the best result?</p>
+
+      <div class="options-grid" id="promptOptions">
+        <button class="option-btn" onclick="checkAnswer(this, false)">"Draw a big dog sitting on grass."</button>
+        <button class="option-btn" onclick="checkAnswer(this, true)">"A cinematic photo of a golden retriever wearing futuristic glasses in a neon city, 8k resolution."</button>
+        <button class="option-btn" onclick="checkAnswer(this, false)">"A cool dog in space."</button>
+      </div>
+
+      <div class="feedback-box" id="feedbackText"></div>
     </div>
   </main>
 
-  <!-- MODULE 3: INTERACTIVE STORIES (Placeholder for Phase 3) -->
+  <!-- MODULE 3: INTERACTIVE STORYBOOK -->
   <main class="container hidden" id="stories-module">
-    <div class="placeholder-card">
-      <h2>📖 Choose-Your-Adventure Stories</h2>
-      <p>Decision-based interactive storybooks loading soon in Phase 3!</p>
+    <div class="module-header">
+      <h2>📖 Choose-Your-Adventure Story</h2>
+      <p>Make smart decisions to guide your character through challenges!</p>
+    </div>
+
+    <div class="story-card">
+      <div class="badge">Interactive Quest</div>
+      <h3 id="storyTitle">The Lost Robot's Memory</h3>
+      <p class="story-text" id="storyContent">You find a small futuristic robot stranded in a forest. Its memory core is malfunctioning. What do you do first?</p>
+
+      <div class="story-choices" id="storyChoices">
+        <button class="choice-btn" onclick="makeStoryChoice(1)">🔧 Inspect the wiring and try to repair its power core.</button>
+        <button class="choice-btn" onclick="makeStoryChoice(2)">💻 Connect your digital tablet to run a system diagnostic scan.</button>
+      </div>
     </div>
   </main>
 
